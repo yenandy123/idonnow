@@ -10,10 +10,18 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="284dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="340dp"
         android:text="Button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:name="com.example.idonnow.BlankFragment"
+        android:layout_width="300dp"
+        android:layout_height="500px"
+        tools:layout_editor_absoluteX="55dp"
+        tools:layout_editor_absoluteY="120dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
