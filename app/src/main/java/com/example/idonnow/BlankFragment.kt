@@ -5,6 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import androidx.fragment.app.activityViewModels
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +24,8 @@ class BlankFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private val dataViewModel:DataViewModel by activityViewModels()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -35,6 +40,18 @@ class BlankFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_blank, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val resultNameView = view.findViewById<TextView>(R.id.showname)
+        val resultPwdView = view.findViewById<TextView>(R.id.showpasswd)
+        val resultBtnView = view.findViewById<Button>(R.id.btn)
+
+        dataViewModel.myData.observe(viewLifecycleOwner){myPerson ->
+            resultNameView.text="Name :${myPerson.name}"
+            resultPwdView.text="密碼 :${myPerson.pwd}"
+        }
     }
 
     companion object {
