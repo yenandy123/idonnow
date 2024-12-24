@@ -5,4 +5,7 @@
     <string name="button">陀螺儀</string>
     <string name="button2">光感測器</string>
     <string name="test">test</string>
+    <string name="G">陀螺儀</string>
+    <string name="back">返回Fragment</string>
+    <string name="back2">返回Fragment</string>
 </resources>

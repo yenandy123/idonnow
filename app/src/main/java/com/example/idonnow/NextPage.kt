@@ -1,6 +1,7 @@
 package com.example.idonnow
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.hardware.Sensor
 import android.hardware.SensorEvent
@@ -23,6 +24,11 @@ class NextPage : AppCompatActivity() ,SensorEventListener{
         sensorManger = getSystemService(Context.SENSOR_SERVICE) as SensorManager
 
         light = sensorManger.getDefaultSensor(Sensor.TYPE_LIGHT)as Sensor
+
+        binding2.button5.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onResume() {
