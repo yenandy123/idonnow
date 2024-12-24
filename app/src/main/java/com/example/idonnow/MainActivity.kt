@@ -18,11 +18,16 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.commit {
             replace(R.id.showfragment,BlankFragment())
         }
-        binding.button2.setOnClickListener {
-           val intent=Intent(this,NextPage::class.java).apply {
-                startActivity(this)
-            }
+        binding.button3.setOnClickListener{
+            val p=Person()
+            p.name = binding.editName.text.toString()
+            p.pwd = binding.editpwd.text.toString()
+            dataViewModel.setPerson(p)
+        }
 
+        binding.button2.setOnClickListener {
+            val intent = Intent(this, NextPage::class.java)
+            startActivity(intent)
         }
     }
 
